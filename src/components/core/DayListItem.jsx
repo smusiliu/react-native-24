@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     content: {
         fontSize: 70,
         color: '#523d2a',
+        fontFamily: 'Inter'
     }
 
 })
