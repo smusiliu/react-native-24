@@ -2,30 +2,30 @@ import { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, StyleSheet, View } from 'react-native';
 
-import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
-import { DMSans_400Regular, DMSans_700Bold } from '@expo-google-fonts/dm-sans';
+// import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+// import { DMSans_400Regular, DMSans_700Bold } from '@expo-google-fonts/dm-sans';
 
-import * as SplashScreen from 'expo-splash-screen';
+// import * as SplashScreen from 'expo-splash-screen';
 
 import DayListItem from '../components/core/DayListItem';
 
 const days = [... new Array(24)].map((value, idx) => idx + 1);
 
 export default function HomeScreen() {
-    const [fontLoaded, fontError] = useFonts({
-        Inter: Inter_900Black,
-        DMRegular: DMSans_400Regular,
-        DMBold: DMSans_700Bold,
-    })
+    // const [fontLoaded, fontError] = useFonts({
+    //     Inter: Inter_900Black,
+    //     DMRegular: DMSans_400Regular,
+    //     DMBold: DMSans_700Bold,
+    // })
 
-    useEffect(() => {
-        if (fontLoaded || fontError) {
-            SplashScreen.hideAsync()
-        }
+    // useEffect(() => {
+    //     if (fontLoaded || fontError) {
+    //         SplashScreen.hideAsync()
+    //     }
 
-    }, [fontLoaded, fontError]) 
+    // }, [fontLoaded, fontError]) 
 
-    if (!fontLoaded && !fontError) return null
+    // if (!fontLoaded && !fontError) return null
     
     return (
         <View style={styles.container}>

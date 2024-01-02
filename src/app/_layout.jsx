@@ -23,14 +23,7 @@ export default function RootLayout() {
     if (!fontLoaded && !fontError) return null
 
     return <Stack
-        screenOptions={{
-            // title: 'Advent Calendar',
-            headerStyle: {
-                // backgroundColor: '#f9ede3',
-                // textAlign: 'center',
-                fontFamily: 'DMBold'
-            }
-        }}
+        screenOptions={{}}
     >
         <Stack.Screen name="index" options={{ title: 'Advent Calendar' }} />
     </Stack>

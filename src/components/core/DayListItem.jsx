@@ -3,7 +3,7 @@ import { Link } from 'expo-router'
 
 export default function DayListItem({ day }) {
     return (
-        <Link href={`/days/day${day}`} asChild>
+        <Link href={`/day${day}`} asChild>
             <Pressable style={styles.box}>
                 <Text style={styles.content}> {day} </Text>
             </Pressable>
