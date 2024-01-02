@@ -3,7 +3,7 @@ import { Link } from 'expo-router'
 
 export default function DayListItem({ day }) {
     return (
-        <Link href={'/user/followers'} asChild>
+        <Link href={`/days/day${day}`} asChild>
             <Pressable style={styles.box}>
                 <Text style={styles.content}> {day} </Text>
             </Pressable>
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     box: {
         flex: 1,
         aspectRatio: 1,
-        backgroundColor: '#e0d7bf',
+        backgroundColor: '#f9ede3',
         margin: 6,
         justifyContent: 'center',
         alignItems: 'center',

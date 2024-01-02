@@ -33,6 +33,7 @@ export default function HomeScreen() {
                 data={days}
                 renderItem={({item}) => <DayListItem day={item} />}
                 numColumns={2}
+                showsVerticalScrollIndicator={false}
             />
 
             <StatusBar style="auto" />
