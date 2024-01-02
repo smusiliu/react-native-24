@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         flex: 1,
         aspectRatio: 1,
         backgroundColor: '#e0d7bf',
-        margin: 7,
+        margin: 6,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     content: {
         fontSize: 70,
         color: '#523d2a',
-        fontFamily: 'Inter'
+        fontFamily: 'DMBold'
     }
 
 })

@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+import { DMSans_400Regular, DMSans_700Bold } from '@expo-google-fonts/dm-sans';
 
 import * as SplashScreen from 'expo-splash-screen';
-
 
 import DayListItem from './src/components/core/DayListItem';
 
@@ -12,7 +13,9 @@ const days = [... new Array(24)].map((value, idx) => idx + 1);
 
 export default function App() {
     const [fontLoaded, fontError] = useFonts({
-        Inter: Inter_900Black
+        Inter: Inter_900Black,
+        DMRegular: DMSans_400Regular,
+        DMBold: DMSans_700Bold,
     })
 
     useEffect(() => {
