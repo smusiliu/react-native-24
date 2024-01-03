@@ -1,13 +1,11 @@
 import { useState } from "react";
-
-import { View, Text, StyleSheet, SafeAreaView, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, SafeAreaView, Pressable } from "react-native";
 import { Stack, router } from "expo-router";
 import { FontAwesome5 } from '@expo/vector-icons';
-
 import { onboardingData } from "../../../constants";
 import { StatusBar } from "expo-status-bar";
 import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
-
+import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated'
 
 export default function OnboardingScreen() {
     const [screenIndex, setScreenIndex] = useState(0);
@@ -60,21 +58,38 @@ export default function OnboardingScreen() {
                 <View style={styles.pageContent}>
                     <View style={styles.screenIndicatorContainer}>
                         {onboardingData.map((data, idx) => <View
-                            style={[styles.screenIndicator, { backgroundColor: idx == screenIndex ? '#cec202' : 'gray' }]}
+                            style={[styles.screenIndicator, { backgroundColor: idx == screenIndex ? '#AF7BFF' : 'gray' }]}
                             key={idx}
                         />)}
                     </View>
 
-                    <FontAwesome5
-                        name={data.icon}
-                        size={100}
-                        color="black"
-                        style={styles.image}
-                    />
+                    <Animated.View entering={SlideInRight} exiting={SlideOutLeft}>
+                        {/* <FontAwesome5
+                            name={data.icon}
+                            size={300}
+                            color="black"
+                            style={styles.image}
+                        /> */}
+                        <Image
+                            style={{ marginTop: 80, width: '100%', height: 420}}
+                            source={{
+                                uri: `${data.src}`,
+                            }}
+                        />
+                    </Animated.View>
 
                     <View style={styles.contentContainer}>
-                        <Text style={styles.title}>{data.title}</Text>
-                        <Text style={styles.description}>{data.description}</Text>
+                        <Animated.Text
+                            entering={SlideInRight}
+                            exiting={SlideOutLeft}
+                            style={styles.title}>{data.title}
+                        </Animated.Text>
+
+                        <Animated.Text
+                            entering={SlideInRight}
+                            exiting={SlideOutLeft}
+                            style={styles.description}>{data.description}
+                        </Animated.Text>
                     </View>
 
                     <View style={styles.buttonsRow}>
@@ -89,7 +104,6 @@ export default function OnboardingScreen() {
                     </View>
                 </View>
             </GestureDetector>
-
         </SafeAreaView>
     )
 }
@@ -102,6 +116,7 @@ const styles = StyleSheet.create({
         // alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#15141a',
+        backgroundColor: '#ebecf0',
     },
     pageContent: {
         padding: 30,
@@ -121,8 +136,8 @@ const styles = StyleSheet.create({
 
     image: {
         alignSelf: 'center',
-        margin: 30,
-        marginTop: 150,
+        // margin: 30,
+        marginTop: 80,
         color: '#cec202'
     },
     contentContainer: {
@@ -130,6 +145,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#ededed',
+        color: '#302e38',
         fontSize: 50,
         fontFamily: 'DMBold',
         textAlign: 'left',
@@ -138,27 +154,29 @@ const styles = StyleSheet.create({
         lineHeight: 60
     },
     description: {
-        color: 'gray',
+        color: '#302e38',
         fontSize: 20,
         fontFamily: 'DMMedium',
         lineHeight: 28
     },
     buttonsRow: {
-        marginTop: 35,
+        marginTop: 50,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 25
     },
     button: {
         backgroundColor: '#302e38',
+        backgroundColor: '#AF7BFF',
         borderRadius: 40,
         alignItems: 'center',
         flex: 1,
     },
     buttonText: {
         color: "#ededed",
+        color: '#302e38',
         fontSize: 17,
-        fontFamily: 'DMMedium',
+        fontFamily: 'DMBold',
         padding: 17,
         paddingHorizontal: 25,
     }
