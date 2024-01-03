@@ -58,20 +58,14 @@ export default function OnboardingScreen() {
                 <View style={styles.pageContent}>
                     <View style={styles.screenIndicatorContainer}>
                         {onboardingData.map((data, idx) => <View
-                            style={[styles.screenIndicator, { backgroundColor: idx == screenIndex ? '#AF7BFF' : 'gray' }]}
+                            style={[styles.screenIndicator, { backgroundColor: idx == screenIndex ? '#AF7BFF' : 'gray' }, { height: idx == screenIndex ? 4 : 3 }]}
                             key={idx}
                         />)}
                     </View>
 
                     <Animated.View entering={SlideInRight} exiting={SlideOutLeft}>
-                        {/* <FontAwesome5
-                            name={data.icon}
-                            size={300}
-                            color="black"
-                            style={styles.image}
-                        /> */}
                         <Image
-                            style={{ marginTop: 80, width: '100%', height: 420}}
+                            style={{ marginTop: 100, width: '100%', height: 420, alignSelf: 'center' }}
                             source={{
                                 uri: `${data.src}`,
                             }}
@@ -96,8 +90,8 @@ export default function OnboardingScreen() {
                         <Text onPress={() => endOnboarding()} style={styles.buttonText}>Skip</Text>
                         <Pressable onPress={() => handleContinue()} style={styles.button}>
                             {
-                                screenIndex === 3 ? <Text style={styles.buttonText}>Enter</Text> :
-                                    <Text style={styles.buttonText}>Continue</Text>
+                                screenIndex === 3 ? <Text style={[styles.buttonText, { color: '#ededed' }]}>Enter</Text> :
+                                    <Text style={[styles.buttonText, { color: '#ededed' }]}>Continue</Text>
                             }
                             {/* <Text style={styles.buttonText}>Continue</Text> */}
                         </Pressable>
@@ -133,13 +127,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'gray',
         borderRadius: 15
     },
-
-    image: {
-        alignSelf: 'center',
-        // margin: 30,
-        marginTop: 80,
-        color: '#cec202'
-    },
     contentContainer: {
         marginTop: 'auto',
     },
@@ -149,7 +136,7 @@ const styles = StyleSheet.create({
         fontSize: 50,
         fontFamily: 'DMBold',
         textAlign: 'left',
-        letterSpacing: 1.01,
+        // letterSpacing: 1.01,
         marginVertical: 20,
         lineHeight: 60
     },
@@ -167,7 +154,7 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#302e38',
-        backgroundColor: '#AF7BFF',
+        // backgroundColor: '#AF7BFF',
         borderRadius: 40,
         alignItems: 'center',
         flex: 1,
