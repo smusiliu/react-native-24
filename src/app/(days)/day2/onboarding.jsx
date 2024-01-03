@@ -6,6 +6,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 import { onboardingData } from "../../../constants";
 import { StatusBar } from "expo-status-bar";
+import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
 
 
 export default function OnboardingScreen() {
@@ -21,7 +22,6 @@ export default function OnboardingScreen() {
         } else {
             setScreenIndex(screenIndex + 1);
         }
-
     }
 
     const endOnboarding = () => {
@@ -29,41 +29,67 @@ export default function OnboardingScreen() {
         router.back()
     }
 
+    const onSwipeBack = () => {
+        const isFirstScreen = screenIndex == 0
+        if (isFirstScreen) {
+            endOnboarding()
+
+        } else {
+            setScreenIndex(screenIndex - 1);
+        }
+    }
+
+    const swipeForward = Gesture.Fling()
+        .direction(Directions.LEFT)
+        .onEnd(handleContinue)
+
+
+    const swipeBackward = Gesture.Fling()
+        .direction(Directions.RIGHT)
+        .onEnd(onSwipeBack)
+
+    const swipes = Gesture.Simultaneous(swipeBackward, swipeForward)
+
     return (
         <SafeAreaView style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
-            <StatusBar 
+            <StatusBar
                 style="light"
             />
+            <GestureDetector gesture={swipes}>
+                <View style={styles.pageContent}>
+                    <View style={styles.screenIndicatorContainer}>
+                        {onboardingData.map((data, idx) => <View
+                            style={[styles.screenIndicator, { backgroundColor: idx == screenIndex ? '#cec202' : 'gray' }]}
+                            key={idx}
+                        />)}
+                    </View>
 
-            <View style={styles.pageContent}>
-                <View style={styles.screenIndicatorContainer}>
-                    {onboardingData.map((data, idx) => <View
-                        style={[styles.screenIndicator, { backgroundColor: idx == screenIndex ? '#cec202' : 'gray'}]} 
-                        key={idx}
-                    />)}
+                    <FontAwesome5
+                        name={data.icon}
+                        size={100}
+                        color="black"
+                        style={styles.image}
+                    />
+
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.title}>{data.title}</Text>
+                        <Text style={styles.description}>{data.description}</Text>
+                    </View>
+
+                    <View style={styles.buttonsRow}>
+                        <Text onPress={() => endOnboarding()} style={styles.buttonText}>Skip</Text>
+                        <Pressable onPress={() => handleContinue()} style={styles.button}>
+                            {
+                                screenIndex === 3 ? <Text style={styles.buttonText}>Enter</Text> :
+                                    <Text style={styles.buttonText}>Continue</Text>
+                            }
+                            {/* <Text style={styles.buttonText}>Continue</Text> */}
+                        </Pressable>
+                    </View>
                 </View>
+            </GestureDetector>
 
-                <FontAwesome5
-                    name={data.icon}
-                    size={100}
-                    color="black"
-                    style={styles.image}
-                />
-
-                <View style={styles.contentContainer}>
-                    <Text style={styles.title}>{data.title}</Text>
-                    <Text style={styles.description}>{data.description}</Text>
-                </View>
-
-                <View style={styles.buttonsRow}>
-                    <Text onPress={() => endOnboarding()} style={styles.buttonText}>Skip</Text>
-
-                    <Pressable onPress={() => handleContinue()} style={styles.button}>
-                        <Text style={styles.buttonText}>Continue</Text>
-                    </Pressable>
-                </View>
-            </View>
         </SafeAreaView>
     )
 }
@@ -84,7 +110,7 @@ const styles = StyleSheet.create({
     screenIndicatorContainer: {
         flexDirection: 'row',
         gap: 12,
-        marginTop: 50,
+        marginTop: 30,
     },
     screenIndicator: {
         flex: 1,
@@ -114,11 +140,11 @@ const styles = StyleSheet.create({
     description: {
         color: 'gray',
         fontSize: 20,
-        fontFamily: 'DMRegular',
+        fontFamily: 'DMMedium',
         lineHeight: 28
     },
     buttonsRow: {
-        marginTop: 25,
+        marginTop: 35,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 25
