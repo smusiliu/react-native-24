@@ -7,6 +7,7 @@ import { StatusBar } from "expo-status-bar";
 import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
 import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated'
 
+
 export default function OnboardingScreen() {
     const [screenIndex, setScreenIndex] = useState(0);
     const data = onboardingData[screenIndex];
