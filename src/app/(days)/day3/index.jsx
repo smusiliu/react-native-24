@@ -1,19 +1,34 @@
-import { Button, View, Text, StyleSheet } from "react-native";
-import { Stack } from "expo-router";
-
-import { Link } from "expo-router";
+import { Button, SafeAreaView, Text, StyleSheet } from "react-native";
+import { Stack, Link } from "expo-router";
+import MarkdownDisplay from "../../../components/day3/MarkdownDisplay";
 
 export default function DayDetailsScreen() {
+    const msg = `# Markdown
+
+## Intergating markdown in React Native
+
+#### Today's agenda:
+- Introduction to Markdown
+- Markdown Syntax Overview
+- Setting up React Native for Markdown
+- Implementing Markdown Rendering
+- Styling Markdown Contents
+- Using Markdown in React Native Components
+- Recap and Q&A Session
+
+    `
     
     return (
-        <View>
+        <SafeAreaView egdes={['bottom']} style={{ flex: 1, padding: 20}}>
             <Stack.Screen options={{ title: "Day 3" }} />
-            <Text style={styles.title}> Day 3 </Text>
+            <MarkdownDisplay>
+                {msg}
+            </MarkdownDisplay>
 
             <Link href="/day3/editor" asChild>
-                <Button style={styles.button} title="Go to Editor" />
+                <Button title="Go to Editor" />
             </Link>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -27,11 +42,11 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        width: 250,
+        // width: 250,
         marginTop: 15,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 17,
+        paddingVertical: 87,
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
