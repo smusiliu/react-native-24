@@ -6,11 +6,6 @@ import Markdown from 'react-native-markdown-display';
 const MarkdownDisplay = ({ children }) => {
     return (
         <ScrollView showsVerticalScrollIndicator={false} contentInsetAdjustmentBehavior='automatic'>
-            {Children.map((Children, child) =>
-                <Markdown style={markdownStyles}>
-                    {child}
-                </Markdown>)}
-
             <Markdown style={markdownStyles}>
                 { children }
             </Markdown>

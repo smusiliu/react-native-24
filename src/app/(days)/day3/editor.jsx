@@ -11,7 +11,7 @@ const EditorScreen = () => {
     const [tab, setTab] = useState('edit')
 
     return (
-        <SafeAreaView style={styles.page}>
+        <View style={styles.page}>
             <Stack.Screen options={{ title: 'Markdown Editor', }} />
             <View style={styles.tabsContainer}>
                 <Pressable
@@ -46,7 +46,7 @@ const EditorScreen = () => {
                         </MarkdownDisplay>
                     </View>
                 )}
-        </SafeAreaView>
+        </View>
     )
 }
 

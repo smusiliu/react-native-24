@@ -91,7 +91,4 @@ This identity is a consequence of the Pythagorean theorem and is fundamental to 
 
 export const template = `# Fun with Markdown!
 
-## Introduction 🚀
-Welcome to this **fun and exciting** markdown guide! Let's dive into the world of Markdown and discover how it makes text formatting cool and easy!
-
 `;
