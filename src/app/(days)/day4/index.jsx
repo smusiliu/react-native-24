@@ -7,7 +7,7 @@ export default function DayDetailsScreen() {
     
     return (
         <SafeAreaView egdes={['bottom']} style={{ flex: 1, padding: 20}}>
-            <Stack.Screen options={{ title: "Day 3" }} />
+            <Stack.Screen options={{ title: "Day 4" }} />
             <MarkdownDisplay>
                 {msg}
             </MarkdownDisplay>
