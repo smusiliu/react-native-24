@@ -3,7 +3,7 @@ import { Stack, Link } from "expo-router";
 import MarkdownDisplay from "../../../components/day3/MarkdownDisplay";
 
 export default function DayDetailsScreen() {
-    const msg = `# AirBnB map with React Nativ
+    const msg = `# AirBnB map with React Native
     `
     
     return (
@@ -13,7 +13,7 @@ export default function DayDetailsScreen() {
                 {msg}
             </MarkdownDisplay>
 
-            <Link href="/day5/airnb" asChild>
+            <Link href="/day5/airbnb" asChild>
                 <Button title="Go to Map" />
             </Link>
         </SafeAreaView>

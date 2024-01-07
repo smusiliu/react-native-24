@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "latitude": 42.336457,
+        "longitude": -71.985786,
+        "price": 100,
+        "title": "Lagos",
+        "stars": 4,
+        "rating": 8.5,
+        "image": "https://example.com/lagos.jpg"
+    },
+
+    {
+        "id": 2,
+        "latitude": 42.328674,
+        "longitude": -71.664658,
+        "price": 80,
+        "title": "Abuja",
+        "stars": 3,
+        "rating": 7.2,
+        "image": "https://example.com/abuja.jpg"
+    },
+
+    {
+        "id": 3,
+        "latitude": 42.341042,
+        "longitude": -71.217133,
+        "price": 70,
+        "title": "Port Harcourt",
+        "stars": 3,
+        "rating": 7.0,
+        "image": "https://example.com/portharcourt.jpg"
+    },
+
+    {
+        "id": 4,
+        "latitude": 42.419331,
+        "longitude": -71.119720,
+        "price": 60,
+        "title": "Enugu",
+        "stars": 2,
+        "rating": 6.0,
+        "image": "https://example.com/enugu.jpg"
+    },
+
+    {
+        "id": 5,
+        "latitude": 42.525482,
+        "longitude": -71.764183,
+        "price": 50,
+        "title": "Ibadan",
+        "stars": 2,
+        "rating": 5.5,
+        "image": "https://example.com/ibadan.jpg"
+    }
+]
+
+
