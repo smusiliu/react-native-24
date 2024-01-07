@@ -1,13 +1,14 @@
+import { useState } from 'react'
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import MapView from 'react-native-maps'
 import { Stack } from 'expo-router'
 import apartments from '../../../constants/apartments.json'
 import { CustomMarker } from '../../../components/day5/CustomMarker'
-import { Listing } from '../../../components/day5/Listing'
+import { ApartmentListCard } from '../../../components/day5/ApartmentListCard'
 
 
 export default function AirbnbScreen() {
-    console.log(apartments)
+    const [selectedApartment, setSelectedApartment] = useState(null)
 
     return (
         <SafeAreaView style={styles.page}>
@@ -24,11 +25,14 @@ export default function AirbnbScreen() {
                 }}
             >
                 {apartments.map(apartment => (
-                    <CustomMarker apartments={apartments} />
+                    <CustomMarker
+                        apartment={apartment}
+                        onPress={() => setSelectedApartment(apartment)}
+                    />
                 ))}
             </MapView>
 
-            <Listing selectedApartment={apartments[0]} />
+            {selectedApartment && <ApartmentListCard selectedApartment={selectedApartment} />}
         </SafeAreaView>
     )
 }

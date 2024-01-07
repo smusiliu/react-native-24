@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Marker } from 'react-native-maps'
 
 
-export const CustomMarker = ({ apartments }) => {
+export const CustomMarker = ({ apartment, onPress }) => {
     return (
         <Marker
             key={apartment.id}
@@ -10,6 +10,7 @@ export const CustomMarker = ({ apartments }) => {
                 latitude: apartment.latitude,
                 longitude: apartment.longitude,
             }}
+            onPress={onPress}
             // title={apartment.title}
             // description={apartment.description}
         >
