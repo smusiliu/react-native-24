@@ -5,6 +5,7 @@ import { Stack } from 'expo-router'
 import apartments from '../../../constants/apartments.json'
 import { CustomMarker } from '../../../components/day5/CustomMarker'
 import { ApartmentListCard } from '../../../components/day5/ApartmentListCard'
+import BottomSheet from '@gorhom/bottom-sheet';
 
 
 export default function AirbnbScreen() {
@@ -33,6 +34,17 @@ export default function AirbnbScreen() {
             </MapView>
 
             {selectedApartment && <ApartmentListCard selectedApartment={selectedApartment} />}
+
+            <BottomSheet
+                ref={bottomSheetRef}
+                index={1}
+                snapPoints={snapPoints}
+                onChange={handleSheetChanges}
+            >
+                <View style={styles.contentContainer}>
+                    <Text>Awesome 🎉</Text>
+                </View>
+            </BottomSheet>
         </SafeAreaView>
     )
 }
