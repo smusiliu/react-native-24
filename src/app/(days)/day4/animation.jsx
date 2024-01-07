@@ -3,14 +3,14 @@ import { Stack } from "expo-router"
 import LottieView from 'lottie-react-native'
 
 
-export default function SplashScreenAnimation() {
+export default function SplashAnimation() {
     return (
         <View style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
 
             <LottieView
                 autoPlay
-                ref={animation}
+                // ref={animation}
                 style={{
                     width: 200,
                     height: 200,
