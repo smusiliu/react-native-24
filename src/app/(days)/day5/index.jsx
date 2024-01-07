@@ -3,30 +3,18 @@ import { Stack, Link } from "expo-router";
 import MarkdownDisplay from "../../../components/day3/MarkdownDisplay";
 
 export default function DayDetailsScreen() {
-    const msg = `# Markdown
-
-## Intergating markdown in React Native
-
-#### Today's agenda:
-- Introduction to Markdown
-- Markdown Syntax Overview
-- Setting up React Native for Markdown
-- Implementing Markdown Rendering
-- Styling Markdown Contents
-- Using Markdown in React Native Components
-- Recap and Q&A Session
-
+    const msg = `# AirBnB map with React Nativ
     `
     
     return (
         <SafeAreaView egdes={['bottom']} style={{ flex: 1, padding: 20}}>
-            <Stack.Screen options={{ title: "Day 3" }} />
+            <Stack.Screen options={{ title: "Day 5" }} />
             <MarkdownDisplay>
                 {msg}
             </MarkdownDisplay>
 
-            <Link href="/day3/editor" asChild>
-                <Button title="Go to Editor" />
+            <Link href="/day5/airnb" asChild>
+                <Button title="Go to Map" />
             </Link>
         </SafeAreaView>
     )
