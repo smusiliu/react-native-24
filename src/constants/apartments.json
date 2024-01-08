@@ -14,7 +14,7 @@
     {
         "id": 2,
         "latitude": 42.328674,
-        "longitude": -71.664658,
+        "longitude": -71.985796,
         "price": 80,
         "title": "Well furnished Urban Duplex",
         "stars": 4.3,
@@ -25,7 +25,7 @@
     {
         "id": 3,
         "latitude": 42.341042,
-        "longitude": -71.217133,
+        "longitude": -71.98579,
         "price": 70,
         "title": "Well furnished Urban Duplex",
         "stars": 3.9,
@@ -36,7 +36,7 @@
     {
         "id": 4,
         "latitude": 42.419331,
-        "longitude": -71.119720,
+        "longitude": -71.985788,
         "price": 60,
         "title": "Well furnished Urban Duplex",
         "stars": 4.8,
@@ -46,7 +46,7 @@
 
     {
         "id": 5,
-        "latitude": 42.525482,
+        "latitude": 42.336457,
         "longitude": -71.764183,
         "price": 50,
         "title": "Well furnished Urban Duplex",

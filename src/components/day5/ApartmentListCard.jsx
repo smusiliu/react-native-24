@@ -1,8 +1,8 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-export const ApartmentListCard = ({ selectedApartment }) => {
+export const ApartmentListCard = ({ selectedApartment, containerStyle }) => {
     return (
-        <View style={styles.card}>
+        <View style={[styles.card, containerStyle]}>
             <View style={styles.imageContainer}>
                 <Image
                     source={require('../../../assets/apartment.jpg')}
@@ -27,13 +27,11 @@ export const ApartmentListCard = ({ selectedApartment }) => {
 
 const styles = StyleSheet.create({
     card: {
-        position: 'absolute',
-        bottom: -10,
         margin: 20,
+        marginBottom: 8,
         flexDirection: 'row',
         backgroundColor: '#fff',
         borderRadius: 10,
-        // padding: 10,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
