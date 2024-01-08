@@ -3,18 +3,18 @@ import { Stack, Link } from "expo-router";
 import MarkdownDisplay from "../../../components/day3/MarkdownDisplay";
 
 export default function DayDetailsScreen() {
-    const msg = `# Tinder Swipe
+    const msg = `# Tinder Swipe Animation
     `
     
     return (
         <SafeAreaView egdes={['bottom']} style={{ flex: 1, padding: 20}}>
-            <Stack.Screen options={{ title: "Day 3" }} />
+            <Stack.Screen options={{ title: "Day 6" }} />
             <MarkdownDisplay>
                 {msg}
             </MarkdownDisplay>
 
             <Link href="/day6/tinder" asChild>
-                <Button title="Go to Editor" />
+                <Button title="Go to Tinder" />
             </Link>
         </SafeAreaView>
     )

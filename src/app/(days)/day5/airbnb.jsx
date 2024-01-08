@@ -7,7 +7,7 @@ import { CustomMarker } from '../../../components/day5/CustomMarker'
 import { ApartmentListCard } from '../../../components/day5/ApartmentListCard'
 import BottomSheet, { BottomSheetFlatList, useGestureEventsHandlersDefault } from '@gorhom/bottom-sheet';
 import { Gesture } from 'react-native-gesture-handler'
-import { events } from '@onflow/fcl'
+// import { events } from '@onflow/fcl'
 
 
 export default function AirbnbScreen() {
